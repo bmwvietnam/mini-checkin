@@ -3,7 +3,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<title>CHECK-IN | BORN TO RACE - JCW EXPERIENCE</title>
+<title>CHECK-IN | PADDLE WITH MINI</title>
 <link rel="apple-touch-icon" sizes="180x180" href="https://mini-vietnam.com/etc.clientlibs/settings/wcm/designs/minidigital-white/images/favicon/resources/apple-touch-icon.png"/>
 <link rel="icon" type="image/png" href="https://mini-vietnam.com/etc.clientlibs/settings/wcm/designs/minidigital-white/images/favicon/resources/favicon-32x32.png" sizes="32x32"/>
 <link rel="icon" type="image/png" href="https://mini-vietnam.com/etc.clientlibs/settings/wcm/designs/minidigital-white/images/favicon/resources/favicon-16x16.png" sizes="16x16"/>
@@ -34,7 +34,7 @@ function check(){
     $('.loading').show();
      $('.h1-name').hide();
        $('.check').hide();
-    $.ajax({url: "https://script.google.com/macros/s/AKfycbzF1QLINbFdjBpd1jE-RXgNooAZBH_OEcZ7e7qmIa4YoSMxNGYMvue10tG9dzN3dUZ0dw/exec?id=" + c, success:    function(result){
+    $.ajax({url: "https://script.google.com/macros/s/AKfycbzy0WIjW_YQq7qOpFzy6itffaKNOiVRQwJ3BQlzjBb0o9nERtxe1B5tpQTD5i4Ak4pX/exec?id=" + c, success:    function(result){
    data =JSON.parse(JSON.stringify(result));
       //var $div1 = jQuery("<div id='div1' style='display:none'>"+result+"</div>");
       //jQuery("body").append($div1);
@@ -45,10 +45,11 @@ function check(){
          $('.check input').attr('value','CHECK-IN');
         try {
        
-             $('.h2-title h1').text(data[2] + " " + data[3]);
+             $('.welcome h3').html("CHÀO MỪNG BẠN ĐẾN VỚI GIẢI ĐẤU<br>MINI PICKLEBALL TẠI HÀ NỘI<br><br>");
+			 $('.h2-title h1').text(data[2] + " " + data[3]);
             // $('.h2-title h2').text("Thương hiệu: " + data[6]);
-             $('.lien-he h3').text("" + data[7]);
-			 $('.khung-gio h3').text("KHUNG GIỜ: " + data[10]);
+            // $('.lien-he h3').text("" + data[7]);
+			 $('.khung-gio h3').html("<br>CHÚC BẠN MỘT NGÀY THI ĐẤU<BR>TRÀN ĐẦY NĂNG LƯỢNG!");
        localStorage.setItem('checkinsdt',c);
        localStorage.setItem('checkindanhxung',data[2]);
        localStorage.setItem('checkinhoten',data[3]);
@@ -64,16 +65,17 @@ function check(){
 	  if (data[17].length!='') {
 	   $('.lien-he h3').html('Lần 1:' + ' ' + data[11] + ' (Đã hoàn thành)' + '<br>' + 'Lần 2:' + ' ' + data[17] + ' (Chờ lái thử)');
 	  } else {
-                     $('.lien-he h3').text(data[7] + ' (Stt ' + data[11] + ')');
-
-       $('.h1-stt h1').html('Đã hoàn thành!<br>Kính chúc Quý khách một ngày tốt lành.');
+                     //$('.lien-he h3').text(data[7] + ' (Stt ' + data[11] + ')');
+	   $('.welcome h3').html("CẢM ƠN BẠN ĐÃ THAM GIA<br>PADDLE WITH MINI<br><br>");
+       $('.h1-stt h1').html('Đã hoàn thành khảo sát.');
        $('.h1-stt h1').addClass('importantRule');
        // $('.check input').attr('value','CHECK-IN LÁI THỬ XE KHÁC');
         }
+		 $('.khung-gio h3').hide();
          $('.check').hide();
       $('.checkout').show();
     } else {
-      $('.h1-stt h1').text(data[11]);
+      //$('.h1-stt h1').text(data[11]);
           $('.check').hide();
       $('.checkout').show();
       $('.survey').show();
@@ -119,7 +121,7 @@ function check(){
     $('.loading').show();
 
     var checkinstt = localStorage.getItem('checkinstt');
-    var surveyLink = "https://docs.google.com/forms/d/e/1FAIpQLSdsYChe7_FKWLQTGHJwY3es5tJsYpwRY1noeFz552IxOQVhGg/viewform?usp=pp_url&entry.1493832941=" + checkinstt +
+    var surveyLink = "https://docs.google.com/forms/d/e/1FAIpQLSdOyYeh-nWxffkowHRODjtvXzvHwn7rSgICRmnz06mVtMJZTQ/viewform?usp=pp_url&entry.1493832941=" + checkinstt +
         "&entry.1645529580=" + localStorage.getItem('checkinhoten') +
         "&entry.16223579=" + localStorage.getItem('checkinsdt');
     
@@ -145,7 +147,7 @@ function check(){
   </script>
   <style>
     .main {
-      width:550px;height:1000px;position:relative;margin:auto;background:url(https://drive.google.com/thumbnail?id=1czmMr5i5dYBq8NK5tkZA1C4eymITHkQG&sz=w1600);background-repeat:no-repeat;    background-size: cover; 
+      width:550px;height:1000px;position:relative;margin:auto;background:url(https://drive.google.com/thumbnail?id=1JtMePW2ENJnR7HN8rUg-tSmW-PbfAf8E&sz=w1600);background-repeat:no-repeat;    background-size: cover; 
       max-height:100vh; overflow:hidden;background-position:center top;
     }
     .importantRule { font-size: 13px !important; padding: 10px 5px;    color: #daffd0;}
@@ -217,14 +219,16 @@ function check(){
       margin: 0;font-weight: bold;    font-size: 70pt;
     }
     #loginform {
-      position: absolute;
+    position: absolute;
     width: 90%;
     margin-left: 5%;
     padding: 30 0;
-    background: linear-gradient(to bottom, #8514158a, #0a0806);
+    background: linear-gradient(to bottom, #011017c7, #010c1200);
     border-radius: 20px;
-    top: 41vh;
-    }
+    top: 45vh;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 10px #ffe030;
+	}
     .loading {
       text-align:center;
       font-size:10pt;
@@ -248,23 +252,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id=loginform>
 <div class='h1-name' style='width: 100%;text-align: center;  text-transform:uppercase;font-size: 11pt; '>
   <input type="text" id='txt-sdt' style="width: 80%; padding: 10px;   text-align: center;color:rgb(25, 25, 25)" placeholder='Nhập SĐT của quý khách'><BR><br>
-  <a onclick='check()' href='#' style='padding: 10px;    width: 69%;    margin-top: 0px;margin-bottom: 20px;text-transform:none;font-size: 10pt;    border: 1px solid white;
-    padding: 10px 0px; text-decoration: none; position:relative; display: block; left: 50%; transform: translate(-50%, 0);'><i></i>CHECK-IN</a><BR>	
-  <!--<input type='button' value='CHECK-IN' style='    background-color: rgb(28, 105, 212);padding: 10px;width: 80%;margin-top: 20px;margin-bottom: 20px;' onclick='check()'><br>-->
-  <a href='https://thenewjcw.mini-vietnam.vn/' style='padding: 10px;width: 60%;margin-top: 30px;text-transform:none;font-size: 10pt; text-decoration: none;'>Đăng ký tham gia</a>
+  <a onclick='check()' href='#' style='width: 69%;    margin-top: 0px;margin-bottom: 0px;text-transform:none;font-size: 10pt;    border: 1px solid white;
+    padding: 10px 0px; text-decoration: none; position:relative; display: block; left: 50%; transform: translate(-50%, 0);'><i></i>CHECK-IN</a>
+  <!--<input type='button' value='CHECK-IN' style='    background-color: rgb(28, 105, 212);padding: 10px;width: 80%;margin-top: 20px;margin-bottom: 20px;' onclick='check()'><br>--><!--
+  <a href='https://challengerday.event-bmwmotorrad.vn/' style='padding: 10px;width: 60%;margin-top: 30px;text-transform:none;font-size: 10pt; text-decoration: none;'>Đăng ký tham gia</a>-->
 
   </div>
  
   <div class='h2-title' style='width: 100%;text-align: center;margin: 0;     padding-top: 0px;   font-size: 13pt;    ;'>
+    <div class='welcome' style='width: 100%;text-align: center;margin: 0;    font-size: 9pt;   ' >
+      <h3  style='margin: 0;font-size: 12pt;'>  </h3>
+    </div>
       <h1 style='margin: 0; text-transform: uppercase;'>  </h1>
-  <h2  style='margin: 0;font-size: 14pt;'>
-   
-  </h2>
-     <div class='lien-he' style='width: 100%;text-align: center;margin: 0;    font-size: 9pt;   ' >
-      <h3  style='margin: 0;font-size: 14pt;'>  </h3>
+      <h2  style='margin: 0;font-size: 14pt;'>  </h2>
+    <div class='lien-he' style='width: 100%;text-align: center;margin: 0;    font-size: 9pt;   ' >
+      <h3  style='margin: 0;font-size: 12pt;'>  </h3>
     </div>
 	<div class='khung-gio' style='width: 100%;text-align: center;margin: 0;    font-size: 9pt;   ' >
-      <h3  style='margin: 0;font-size: 14pt;'>  </h3>
+      <h3  style='margin: 0;font-size: 10pt;'>  </h3>
     </div>
     </div>
  <div class='h1-stt' style='width: 100%;text-align: center;margin: 0;     font-size: 36pt;   '>
@@ -276,13 +281,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <div style='text-align:center;display:none' class='check' />
    <input type='button' value='CHECK-IN' style='    background-color: rgb(28, 105, 212);    padding: 10px;    width: 60%;    margin-top: 30px;margin-bottom: 10px;' onclick='checkin()'><br>
   </div>
-       <div style='text-align:center; position: relative; display:none' class='survey' />
+  <div style='text-align:center; position: relative; display:none' class='survey' />
    <!--<input type='button' value='Đánh giá về chương trình' style='    background-color: rgb(28, 105, 212);    padding: 10px;    width: 60%;    margin-top: 30px;margin-bottom: 10px;' onclick='survey()'><br>-->
-   <br><a onclick='survey()' href='#' style='padding: 10px;    width: 50%;    margin-top: 0px;margin-bottom: 20px;text-transform:none;font-size: 10pt;    border: 1px solid #ffffff; padding: 10px 10px; text-decoration: none; position: relative; transform: translate(-50%,0%); left: 50%; display: block; background-color: #861414;'><i></i>Đánh giá về chương trình</a>
+   <br><a onclick='survey()' href='#' style='padding: 10px;    width: 50%;    margin-top: 0px;margin-bottom: 10px;text-transform:none;font-size: 10pt;    border: 1px solid #ffffff; padding: 10px 10px; text-decoration: none; position: relative; transform: translate(-50%,0%); left: 50%; display: block; background-color: #fff; color: #000;    text-transform: uppercase;'><i></i>Đánh giá về chương trình</a>
   </div>
-  <div style='text-align:center;display:none; position: relative; padding-top: 10px;' class='checkout' />
-        
-    <a onclick='checkout()' href='#' style='padding: 10px;    width: 50%;    margin-top: 0px;text-transform:none;font-size: 10pt;    border: 1px solid white; padding: 10px 10px; text-decoration: none; position: relative; transform: translate(-50%,0%); left: 50%; display: block'><i></i>LOG OUT</a>
+  <div style='text-align:center;display:none; position: relative; padding-top: 10px;' class='checkout' />   
+    <a onclick='checkout()' href='#' style='padding: 10px;    width: 50%;    margin-top: 0px;text-transform:none;font-size: 10pt;    border: 1px solid white; padding: 10px 10px; text-decoration: none; position: relative; transform: translate(-50%,0%); left: 50%; display: block'><i></i>QUAY LẠI</a>
   
   </div>
 </div>
@@ -290,5 +294,3 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </body>
 
 </html>
-
-
