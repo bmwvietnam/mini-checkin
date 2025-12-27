@@ -150,7 +150,7 @@ function check(){
       width:550px;height:1000px;position:relative;margin:auto;background:url(https://drive.google.com/thumbnail?id=1JtMePW2ENJnR7HN8rUg-tSmW-PbfAf8E&sz=w1600);background-repeat:no-repeat;    background-size: cover; 
       max-height:100vh; overflow:hidden;background-position:center top;
     }
-    .importantRule { font-size: 13px !important; padding: 10px 5px;    color: #daffd0;}
+    .importantRule { font-family:checkin-sans; font-size: 13px !important; padding: 10px 5px;    color: #daffd0;}
 
 @font-face {
   font-family: checkin;
@@ -171,6 +171,16 @@ function check(){
       font-weight:10;
   src: url('./mini/MINISerif-Regular.woff');
 }
+@font-face {
+  font-family: checkin-sans;
+  src: url('./mini/MINISansSerif-Regular.woff');
+}
+    @font-face {
+  font-family: checkin-sans;
+      font-weight:bold;
+  src: url('./mini/MINISansSerif-Bold.woff');
+}
+
    * {
       color:white;
       font-family:checkin;
@@ -261,7 +271,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <div class='h2-title' style='width: 100%;text-align: center;margin: 0;     padding-top: 0px;   font-size: 13pt;    ;'>
     <div class='welcome' style='width: 100%;text-align: center;margin: 0;    font-size: 9pt;   ' >
-      <h3  style='margin: 0;font-size: 12pt;'>  </h3>
+      <h3  style='font-family:checkin-sans; margin: 0;font-size: 12pt;'>  </h3>
     </div>
       <h1 style='margin: 0; text-transform: uppercase;'>  </h1>
       <h2  style='margin: 0;font-size: 14pt;'>  </h2>
@@ -269,7 +279,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3  style='margin: 0;font-size: 12pt;'>  </h3>
     </div>
 	<div class='khung-gio' style='width: 100%;text-align: center;margin: 0;    font-size: 9pt;   ' >
-      <h3  style='margin: 0;font-size: 10pt;'>  </h3>
+      <h3  style='font-family:checkin-sans; margin: 0;font-size: 10pt;'>  </h3>
     </div>
     </div>
  <div class='h1-stt' style='width: 100%;text-align: center;margin: 0;     font-size: 36pt;   '>
@@ -283,10 +293,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div style='text-align:center; position: relative; display:none' class='survey' />
    <!--<input type='button' value='Đánh giá về chương trình' style='    background-color: rgb(28, 105, 212);    padding: 10px;    width: 60%;    margin-top: 30px;margin-bottom: 10px;' onclick='survey()'><br>-->
-   <br><a onclick='survey()' href='#' style='padding: 10px;    width: 50%;    margin-top: 0px;margin-bottom: 10px;text-transform:none;font-size: 10pt;    border: 1px solid #ffffff; padding: 10px 10px; text-decoration: none; position: relative; transform: translate(-50%,0%); left: 50%; display: block; background-color: #fff; color: #000;    text-transform: uppercase;'><i></i>Đánh giá về chương trình</a>
+   <br><a onclick='survey()' href='#' style='font-family:checkin-sans; padding: 10px;    width: 50%;    margin-top: 0px;margin-bottom: 10px;text-transform:none;font-size: 10pt;    border: 1px solid #ffffff; padding: 10px 10px; text-decoration: none; position: relative; transform: translate(-50%,0%); left: 50%; display: block; background-color: #fff; color: #000;    text-transform: uppercase;'><i></i>Đánh giá về chương trình</a>
   </div>
   <div style='text-align:center;display:none; position: relative; padding-top: 10px;' class='checkout' />   
-    <a onclick='checkout()' href='#' style='padding: 10px;    width: 50%;    margin-top: 0px;text-transform:none;font-size: 10pt;    border: 1px solid white; padding: 10px 10px; text-decoration: none; position: relative; transform: translate(-50%,0%); left: 50%; display: block'><i></i>QUAY LẠI</a>
+    <a onclick='checkout()' href='#' style='font-family:checkin-sans; padding: 10px;    width: 50%;    margin-top: 0px;text-transform:none;font-size: 10pt;    border: 1px solid white; padding: 10px 10px; text-decoration: none; position: relative; transform: translate(-50%,0%); left: 50%; display: block'><i></i>QUAY LẠI</a>
   
   </div>
 </div>
